@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_student_marks_form" model="ir.ui.view">
+        <field name="name">student.marks.form</field>
+        <field name="model">student.marks</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="roll_number"/>
+                        <field name="subject"/>
+                        <field name="marks"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_marks_list" model="ir.ui.view">
+        <field name="name">student.marks.list</field>
+        <field name="model">student.marks</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="roll_number"/>
+                <field name="subject"/>
+                <field name="marks"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_marks_action" model="ir.actions.act_window">
+        <field name="name">Student Marks</field>
+        <field name="res_model">student.marks</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_student_marks_root" name="Student Management"/>
+    <menuitem id="menu_student_marks" name="Student Marks" parent="menu_student_marks_root" action="student_marks_action"/>
+</odoo>
